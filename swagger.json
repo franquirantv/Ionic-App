@@ -1,0 +1,361 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Creado por Francisco Quirant Vicente",
+    "version": "1.0.0",
+    "title": "Práctica 2. Servicios Web",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "fqv2@alu.ua.es"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:8080",
+  "basePath": "/api-docs",
+  "tags": [
+    {
+      "name": "Partes",
+      "description": "Gestiona tus partes."
+    },
+    {
+      "name": "Clientes",
+      "description": "Gestiona los clientes."
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/partes": {
+      "get": {
+        "tags": [
+          "Partes"
+        ],
+        "summary": "Obtiene todos los partes existentes.",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operacion completada",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Partes"
+              }
+            }
+          },
+          "400": {
+            "description": "La operación no se ha podido completar."
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Partes"
+        ],
+        "summary": "Crear un nuevo parte",
+        "description": "",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "parte",
+            "description": "Objeto tipo parte que se quiere crear",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Partes"
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Se ha producido un error."
+          }
+        }
+      }
+    },
+    "/partes/id": {
+      "put": {
+        "tags": [
+          "Partes"
+        ],
+        "summary": "Actualiza un parte",
+        "description": "",
+        "consumes": [
+          "application/json",
+          "application/xml"
+        ],
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Objeto tipo parte que se quiere actualizar",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Partes"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "El ID no es valido."
+          },
+          "404": {
+            "description": "No se ha encontrado el parte seleccionado."
+          },
+          "405": {
+            "description": "No se ha podido actualizar."
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Partes"
+        ],
+        "summary": "Elimina el parte",
+        "description": "",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "api_key",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "description": "ID del parte que se quiera eliminar",
+            "required": true,
+            "type": "integer",
+            "minimum": 1,
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "No se ha encontrado el ID"
+          },
+          "404": {
+            "description": "No se ha podido encontrar el Parte"
+          }
+        }
+      }
+    },
+    "/clientes": {
+      "get": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Devuelve la lista de clientes",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Operación realizada con éxito"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Crea un cliente",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "objeto cliente que se quiere crear",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Clientes"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación realizada con éxito",
+            "schema": {
+              "$ref": "#/definitions/Clientes"
+            }
+          },
+          "400": {
+            "description": "Cliente incorrecto"
+          }
+        }
+      }
+    },
+    "/clientes/{id}": {
+      "put": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Actualiza un cliente",
+        "description": "Modifica cualquier atributo del objeto cliente",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID del cliente a actualizar",
+            "required": true,
+            "type": "integer",
+            "minimum": 1,
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación realizada con éxito",
+            "schema": {
+              "$ref": "#/definitions/Clientes"
+            }
+          },
+          "400": {
+            "description": "El ID no es correcto"
+          },
+          "404": {
+            "description": "Cliente no encontrado"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Clientes"
+        ],
+        "summary": "Elimina un cliente",
+        "produces": [
+          "application/xml",
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID del cliente a eliminar",
+            "required": true,
+            "type": "integer",
+            "minimum": 1,
+            "format": "int64"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "El ID es incorrecto"
+          },
+          "404": {
+            "description": "Cliente no encontrado"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "Partes": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "fecha": {
+          "type": "string",
+          "format": "date"
+        },
+        "hora": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "descripcion": {
+          "type": "string"
+        },
+        "incidencia_resuelta": {
+          "type": "boolean",
+          "default": false
+        },
+        "tiempo_dedicado_en_horas": {
+          "type": "integer",
+          "format": "double"
+        }
+      },
+      "xml": {
+        "name": "Partes"
+      }
+    },
+    "Clientes": {
+      "type": "object",
+      "required": [
+        "id"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "nombre": {
+          "type": "string"
+        },
+        "dni": {
+          "type": "string"
+        },
+        "direccion": {
+          "type": "string"
+        },
+        "poblacion": {
+          "type": "string"
+        },
+        "telefono": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "Clientes"
+      }
+    }
+  }
+}

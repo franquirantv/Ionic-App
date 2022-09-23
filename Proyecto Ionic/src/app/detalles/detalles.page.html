@@ -1,0 +1,47 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons class="back" slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+
+    <div class="back-circle"></div>
+    <ion-title class="ion-text-center custom-font">Detalles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <svg class="back-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#364568"
+      d="M68.6,-33.5C81.6,-17.2,79.6,13.8,65.7,37.6C51.8,61.3,25.9,77.8,2.1,76.6C-21.7,75.4,-43.5,56.5,-54.2,34.6C-65,12.7,-64.8,-12.3,-53.9,-27.4C-43,-42.4,-21.5,-47.6,3.2,-49.4C27.9,-51.2,55.7,-49.7,68.6,-33.5Z"
+      transform="translate(100 100)" />
+  </svg>
+
+  
+  
+  <ion-item>
+    <ion-label>ID Cliente:</ion-label>
+    <ion-input [(ngModel)]="data.id" disabled></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fecha:</ion-label>
+    <ion-input [(ngModel)]="data.fecha" disabled></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Hora:</ion-label>
+    <ion-input [(ngModel)]="data.hora" disabled></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Descripcion:</ion-label>
+    <ion-input [(ngModel)]="data.descripcion" disabled></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Incidencia Resuelta:</ion-label>
+    <ion-input [(ngModel)]="data.incidencia_resuelta" disabled></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tiempo dedicado (en horas):</ion-label>
+    <ion-input [(ngModel)]="data.tiempo_dedicado_en_horas" disabled></ion-input>
+  </ion-item>
+</ion-content>

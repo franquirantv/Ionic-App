@@ -1,0 +1,41 @@
+{
+  "partes": [
+    {
+      "id": "1",
+      "fecha": "2021-10-19",
+      "hora": "21:50",
+      "descripcion": "Realización de la Práctica de DISM",
+      "incidencia_resuelta": "Días de solucionar errores",
+      "tiempo_dedicado_en_horas": 30
+    }
+  ],
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "Francisco Quirant",
+      "dni": "74386110Q",
+      "direccion": "Pere Joan Perpinyà 88",
+      "poblacion": "Elche",
+      "telefono": 622247656,
+      "email": "franelx01@gmail.com"
+    },
+    {
+      "id": "2",
+      "nombre": "Jennifer Quirant",
+      "dni": "74357210J",
+      "direccion": "Capitán Antonio Mena 22",
+      "poblacion": "Elche",
+      "telefono": 722245643,
+      "email": "jenny@gmail.com"
+    },
+    {
+      "id": "4",
+      "nombre": "alberto",
+      "dni": "4342352",
+      "direccion": "direccion",
+      "poblacion": "poblcaion",
+      "telefono": 665212672,
+      "email": "franelx012gmail.com"
+    }
+  ]
+}

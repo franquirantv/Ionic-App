@@ -1,0 +1,52 @@
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <div class="back-circle"></div>
+    <ion-title class="ion-text-center custom-font">Editar Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <svg class="back-blob" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <path fill="#364568"
+      d="M68.6,-33.5C81.6,-17.2,79.6,13.8,65.7,37.6C51.8,61.3,25.9,77.8,2.1,76.6C-21.7,75.4,-43.5,56.5,-54.2,34.6C-65,12.7,-64.8,-12.3,-53.9,-27.4C-43,-42.4,-21.5,-47.6,3.2,-49.4C27.9,-51.2,55.7,-49.7,68.6,-33.5Z"
+      transform="translate(100 100)" />
+  </svg>
+
+  <div class="ion-padding">
+
+    <form class="ion-padding">
+
+      <div class="wrap-input">
+        <input class="input"  [(ngModel)]="data.id" type="text" name="id" placeholder="ID Cliente">
+      </div>
+      <div class="wrap-input">
+        <input class="input"  [(ngModel)]="data.nombre" type="text" name="nombre" placeholder="Nombre">
+      </div>
+      <div class="wrap-input">
+        <input class="input"  [(ngModel)]="data.dni" type="text" name="dni" placeholder="DNI">
+      </div>
+      <div class="wrap-input">
+        <input class="input"  [(ngModel)]="data.direccion" type="text" name="direccion"
+          placeholder="Dirección">
+      </div>
+      <div class="wrap-input">
+        <input class="input"  [(ngModel)]="data.poblacion" type="text" name="poblacion"
+          placeholder="Población">
+      </div>
+      <div class="wrap-input">
+        <input class="input"  [(ngModel)]="data.telefono" type="number" name="telefono"
+          placeholder="Teléfono">
+      </div>
+      <div class="wrap-input">
+        <input class="input"  [(ngModel)]="data.email" type="text" name="email" placeholder="E-mail">
+      </div>
+    </form>
+  </div>
+  <div class="containers">
+    <ion-button class="actualizar" color=" " (click)="update()" >Actualizar</ion-button>
+    <ion-button class="cancelar" color=" " [routerLink]="['/tabs/gestion']">Cancelar</ion-button>
+  </div>
+</ion-content>
